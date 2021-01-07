@@ -4,13 +4,7 @@ class Characters
 
     attr_accessor :name, :occupation, :nickname, :portrayed
 
-    #def initialize(name, occupation, nickname, portrayed)
-       # @name = name
-       # @occupation = occupation
-        #@nickname = nickname
-        #@portrayed = portrayed
-        #save
-    #end
+    
 
     def initialize(character_hash)
         character_hash.each do |k, v|
