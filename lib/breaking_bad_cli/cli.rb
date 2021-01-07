@@ -26,10 +26,11 @@ class CLI
 
     def goodbye
         puts "It was nice meeting you , come back anytime!"
+        exit
     end
 
     def invalid
-        puts "I'm not sure what you mean. Try again please."
+        puts "I'm not sure what you mean. Try again please. Enter either 'yes' to see the list of characters or 'exit' to leave the set"
         menu
     end
 
@@ -37,9 +38,15 @@ class CLI
         puts "Select a character for a deeper look"
 
         selection = user_input
-        character = Characters.find_character(selection)
-        character_details(character)
-    end
+        if character = Characters.find_character(selection)
+            character_details(character)
+        elsif selection == 'exit'
+            goodbye
+        else
+            invalid
+        end
+        
+     end
 
     def character_details(character)
         puts ""
@@ -50,6 +57,8 @@ class CLI
         puts "Nickname: #{character.nickname}"
         puts "Portrayed: #{character.portrayed}"
         puts "--------------------------------------"
+        puts ""
+        puts "If you would like to see the list of characters again enter 'yes' otherwise enter 'exit'"
         menu
     end
 
