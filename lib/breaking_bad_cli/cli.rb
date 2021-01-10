@@ -35,7 +35,7 @@ class CLI
     end
 
     def character_choice
-        puts "Select a character for a deeper look"
+        puts "Type in a character's name for a deeper look"
 
         selection = user_input
         if character = Characters.find_character(selection)
@@ -52,6 +52,7 @@ class CLI
         puts ""
         puts ""
         puts "--------------------------------------"
+        puts "Char_id: #{character.char_id}"
         puts "Name: #{character.name}"
         puts "Occupation: #{character.occupation}"
         puts "Nickname: #{character.nickname}"

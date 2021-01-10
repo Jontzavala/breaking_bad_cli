@@ -2,7 +2,7 @@ class Characters
 
     @@all = []
 
-    attr_accessor :name, :occupation, :nickname, :portrayed
+    attr_accessor :char_id, :name, :occupation, :nickname, :portrayed
 
     
 

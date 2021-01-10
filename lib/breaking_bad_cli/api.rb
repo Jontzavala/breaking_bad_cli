@@ -6,7 +6,7 @@ class API
         characters_array.each do |character|
             Characters.new(character)
         end
-        
+
     end
 
 
